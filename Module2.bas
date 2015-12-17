@@ -60,11 +60,26 @@ If ActiveSheet.Name = "ERECT" Then
         fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
         Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
+    ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Apex") >= 1 Then
+        wb = "Tally Sheet for Apex"
+        fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
+        Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
+        ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
     End If
 ElseIf ActiveSheet.Name = "DISMAN" Then
     e = "DISMAN"
-    If InStr(ActiveSheet.Cells(x, y + 1), "Tower" Or "Slewing" Or "Machine Deck") > 1 Then
+    If InStr(ActiveSheet.Cells(x, y + 1), "Tower") >= 1 Then
         wb = "Tally Sheet for Tower" & e
+        fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
+        Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
+        ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
+    ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Slewing") >= 1 Then
+        wb = "Tally Sheet for Slewing" & e
+        fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
+        Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
+        ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
+    ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Machine Deck") >= 1 Then
+        wb = "Tally Sheet for Machine Deck" & e
         fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
         Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
@@ -90,6 +105,11 @@ ElseIf ActiveSheet.Name = "DISMAN" Then
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
     ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Cwt") >= 1 Then
         wb = "Tally Sheet for Counterweight" & e
+        fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
+        Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
+        ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
+    ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Apex") >= 1 Then
+        wb = "Tally Sheet for Apex" & e
         fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
         Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
