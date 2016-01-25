@@ -45,11 +45,6 @@ If ActiveSheet.Name = "ERECT" Then
         fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
         Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
-    ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Jib") >= 1 Then
-        wb = "Tally Sheet for Jib"
-        fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
-        Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
-        ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
     ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Inner Jib") >= 1 Then
         wb = "Tally Sheet for Inner Jib"
         fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
@@ -57,6 +52,11 @@ If ActiveSheet.Name = "ERECT" Then
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
     ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Outer Jib") >= 1 Then
         wb = "Tally Sheet for Outer Jib"
+        fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
+        Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
+        ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
+    ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Jib") >= 1 Then
+        wb = "Tally Sheet for Jib"
         fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
         Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
@@ -83,11 +83,6 @@ ElseIf ActiveSheet.Name = "DISMAN" Then
         fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
         Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
-    ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Jib") >= 1 Then
-        wb = "Tally Sheet for Jib"
-        fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
-        Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
-        ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
     ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Inner Jib") >= 1 Then
         wb = "Tally Sheet for Inner Jib" & e
         fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
@@ -95,6 +90,11 @@ ElseIf ActiveSheet.Name = "DISMAN" Then
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
     ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Outer Jib") >= 1 Then
         wb = "Tally Sheet for Outer Jib" & e
+        fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
+        Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
+        ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
+    ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Jib") >= 1 Then
+        wb = "Tally Sheet for Jib"
         fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
         Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
