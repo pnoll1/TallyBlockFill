@@ -68,8 +68,18 @@ If ActiveSheet.Name = "ERECT" Then
     End If
 ElseIf ActiveSheet.Name = "DISMAN" Then
     e = "DISMAN"
-    If InStr(ActiveSheet.Cells(x, y + 1), "Tower" Or "Slewing" Or "Machine Deck") > 1 Then
-        wb = "Tally Sheet for Tower" & e
+     If InStr(ActiveSheet.Cells(x, y + 1), "Tower") >= 1 Then
+        wb = "Tally Sheet for Tower"
+        fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
+        Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
+        ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
+    ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Slewing") >= 1 Then
+        wb = "Tally Sheet for Slewing"
+        fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
+        Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
+        ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
+    ElseIf InStr(ActiveSheet.Cells(x, y + 1), "Machine Deck") >= 1 Then
+        wb = "Tally Sheet for Machine Deck"
         fso.CopyFile "S:\Sicklesteel Cranes\Engineering\Misc\Tower Cranes\Tally Sheet for ACAD.xlsx", path
         Workbooks.Open (path & "Tally Sheet for ACAD.xlsx")
         ActiveWorkbook.SaveAs Filename:=path & wb & ".xlsx"
